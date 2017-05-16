@@ -10,7 +10,7 @@ R f  ( R a ) { ツ 1/(1+std::exp(-a)); }
 R df ( R a ) { ツ a*(1-a); }
 
 // Costs
-R q  ( R a, I y ) { ツ (y-a)*(y-a); }
+R q  ( R a, I y ) { ツ (y-a)*(y-a)/2.; }
 R dq ( R a, I y ) { ツ a-y; }
 R c  ( R a, I y ) { ツ -y*std::log(a)-(1-y)*std::log(1-a); }
 R dc ( R a, I y ) { ツ (a-y)/(a*(1-a)); }
