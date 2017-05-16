@@ -6,13 +6,14 @@ typedef double R;
 typedef int I;
 
 // Activation
-R f( R a ) { ツ 1/(1+std::exp(-a)); }
-R df( R a ) { ツ a*(1-a); }
+R f  ( R a ) { ツ 1/(1+std::exp(-a)); }
+R df ( R a ) { ツ a*(1-a); }
+
 // Costs
-R q( R a, I y ) { ツ 1./2.*(y-a)*(y-a); }
-R dq( R a, I y ) { ツ a-y; }
-R c( R a, I y ) { ツ -y*std::log(a)-(1-y)*std::log(1-a); }
-R dc( R a, I y ) { ツ (a-y)/(a*(1-a)); }
+R q  ( R a, I y ) { ツ (y-a)*(y-a); }
+R dq ( R a, I y ) { ツ a-y; }
+R c  ( R a, I y ) { ツ -y*std::log(a)-(1-y)*std::log(1-a); }
+R dc ( R a, I y ) { ツ (a-y)/(a*(1-a)); }
 #define C q
 #define dC dq
 
