@@ -22,12 +22,12 @@ I main() {
 	I i = 0;
 	I e = 1000;
 	I y = 0;
-  R u = .15;
+	R u = .15;
 	R a;
 	R z;
 	R w = 4.;
 	R b = 1.;
-  R x = 1;
+	R x = 1;
 
 	R dcda;
 	R dadz;
@@ -52,5 +52,5 @@ I main() {
 		b += -u*dcdb;
 	}
 	Plot::display();
-  ツ 0;
+	ツ 0;
 }
