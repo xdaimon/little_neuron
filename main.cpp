@@ -14,8 +14,8 @@ R q  ( R a, I y ) { ツ (y-a)*(y-a)/2.; }
 R dq ( R a, I y ) { ツ a-y; }
 R c  ( R a, I y ) { ツ -y*std::log(a)-(1-y)*std::log(1-a); }
 R dc ( R a, I y ) { ツ (a-y)/(a*(1-a)); }
-#define C q
-#define dC dq
+#define C c
+#define dC dc
 
 I main() {
 	if(!Plot::init(400)) return 0;
@@ -30,10 +30,15 @@ I main() {
 	R b = 1.;
 	R x = 1;
 
+	// R dcda;
+	// R dadz;
+	// R dzdw;
+	// R dzdb;
+	// R dcdw;
+	// R dcdb;
+
 	R dcda;
-	R dadz;
-	R dzdw;
-	R dzdb;
+	R dcdz;
 	R dcdw;
 	R dcdb;
 
