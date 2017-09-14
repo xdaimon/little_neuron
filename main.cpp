@@ -42,12 +42,20 @@ I main() {
 		a = f( z );
 		Plot::draw(400*i/double(e),400*a);
 
+		// https://en.wikipedia.org/wiki/Automatic_differentiation
+		// Reverse mode?
+		//dcda = dC( a, y );
+		//dadz = df( a );
+		//dzdw = x;
+		//dzdb = 1;
+		//dcdw = dcda * dadz * dzdw;
+		//dcdb = dcda * dadz * dzdb;
+
+		// Forward mode?
 		dcda = dC( a, y );
-		dadz = df( a );
-		dzdw = x;
-		dzdb = 1;
-		dcdw = dcda * dadz * dzdw;
-		dcdb = dcda * dadz * dzdb;
+		dcdz = dcda * df( a );
+		dcdw = dcdz * x;
+		dcdb = dcdz;
 
 		w += -u*dcdw;
 		b += -u*dcdb;
